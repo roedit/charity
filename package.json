@@ -1,0 +1,24 @@
+{
+  "name": "charity",
+  "version": "1.0.0",
+  "description": "Latest donations",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roedit/charity.git"
+  },
+  "keywords": [
+    "React",
+    "from",
+    "scratch"
+  ],
+  "author": "Andrei Toma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roedit/charity/issues"
+  },
+  "homepage": "https://github.com/roedit/charity#readme"
+}
