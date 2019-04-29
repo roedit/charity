@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const autoprefixer = require('autoprefixer')
 
 module.exports = env => {
@@ -53,11 +54,14 @@ module.exports = env => {
             ]
         },
         plugins: [
+            new Dotenv(),
             new HtmlWebpackPlugin({
                 template: './src/index.html'
             })
         ]
     }
+
+    //TODO: check if css is minified in prod mode
     
     if (!production) {
         config.devtool = 'source-map'
