@@ -1,4 +1,21 @@
-$mainColor: red;
+@import "../styles/colors"
 
 body
-    background-color: $mainColor
+    background-color: $main-background-color
+
+    .app
+        max-width: 1500px
+        margin: auto
+        display: grid
+        grid-template-areas: 'charity' 'donations'
+        grid-template-columns: 100% 100%
+                            
+        grid-column-gap: 1em
+        grid-row-gap: 1em
+
+        @media only screen and (min-width: 640px) 
+            grid-template-areas: 'charity donations'
+            grid-template-columns: 50% 50%
+
+        
+

@@ -1,15 +1,25 @@
 import React from 'react'
-import {observer, inject} from 'mobx-react';
+import {observer, inject} from 'mobx-react'
+import './donations.sass'
+import Donation from './donation/Donation'
 
 @inject('charityStore')
 @observer
 class Donations extends React.Component {
+
     render() {
         const { charityStore } = this.props
     
-        console.log(charityStore.donations)
+        if(charityStore.loadingDonations) {
+            return (
+                <div>Loading..</div>
+            )
+        }
+
         return (
-            <div>cucu</div>
+            <div className="donations">
+                {charityStore.donations.map((donation, index) => <Donation key={index} donation={donation} align={index % 2 ? 'left' : 'right'}/>)}
+            </div>
         );
     }
 };

@@ -1,15 +1,32 @@
 import React from 'react'
 import {observer, inject} from 'mobx-react';
+import './charity.sass'
 
 @inject('charityStore')
 @observer
 class Charity extends React.Component {
     render() {
         const { charityStore } = this.props
-    
+
         console.log(charityStore.charity)
+
+        if(charityStore.loadingCharity) {
+            return (
+                <div>Loading..</div>
+            )
+        }
+    
         return (
-            <div>This is the carity component</div>
+            <div className="charity">
+                <div className="header">
+                    <img className="logo" src={charityStore.charity.logoAbsoluteUrl} />
+                    <h2>{charityStore.charity.name}</h2>
+                </div>
+                <div className="description">
+                    <p>{charityStore.charity.description}</p>
+                    <span>Charity No. #{charityStore.charity.registrationNumber}</span>
+                </div>
+            </div>
         );
     }
 };

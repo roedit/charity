@@ -1,0 +1,40 @@
+@import "../../../styles/colors"
+
+.donation 
+    display: grid
+    grid-template-rows: auto
+    margin: 20px 0
+
+    .user 
+        width: 100%
+        border: 4px solid $main-border-color
+        border-radius: 50%
+        order: 2
+
+    .info
+        margin: 10px 10px 10px 30px
+
+        .header 
+            border-bottom: 2px solid $main-border-color
+            margin-bottom: 5px
+
+            .name
+                color: $main-title-color
+                margin: 0
+
+            .amount
+                color: $main-content-color
+                margin: 0
+
+        .message
+            color: $main-content-color
+
+            p
+                margin-top: 5px
+
+.donation.right
+    grid-template-columns: auto 100px 
+
+.donation.left 
+    grid-template-columns: 100px auto
+    
