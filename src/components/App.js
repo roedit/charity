@@ -1,9 +1,15 @@
 import React from 'react'
 import './app.sass'
+import Charity from './charity/Charity'
+import Donations from './donations/Donations'
 
  const App = () => {
-   console.log(process.env.API_KEY);
-   return (<div className="app"> Charity App! </div>)
+   return (
+    <div className="app"> 
+      <Charity />
+      <Donations />
+    </div>
+   )
  }
 
 export default App

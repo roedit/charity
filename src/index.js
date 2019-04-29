@@ -1,5 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from "mobx-react"
 import App from './components/App'
+import CharityStore from './stores/charityStore'
 
-ReactDOM.render(<App />, document.getElementById('app'))
+const charityStore = new CharityStore();
+
+ReactDOM.render(
+    <Provider charityStore={charityStore}>
+        <App />
+    </Provider>, document.getElementById('app'))
