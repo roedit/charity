@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Charity from './Charity'
+import Spinner from '../spinner/Spinner';
 
 const charityStore = {
     loadingCharity: true,
@@ -14,7 +15,8 @@ const charityStore = {
 describe('Charity', () => {
     it('Should show the loading msg', () => {
         const wrapper = shallow(<Charity.wrappedComponent charityStore={charityStore}/>)
-        expect(wrapper.text()).toBe('Loading..')
+        expect(wrapper.hasClass('charity')).toBe(true)
+        expect(wrapper.childAt(0).type()).toBe(Spinner)
     })
 
     it('Should create the component', () => {

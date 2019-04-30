@@ -13,7 +13,11 @@ const Donation = (props) => {
         <div className="info" style={myStyle}>
            <div className="header">
             <h3 className="name">{donation.donorDisplayName}</h3>
-            <h4 className="amount">{getCurrencySymbol(donation.currencyCode)} {donation.amount.toFixed(2)}</h4>
+            { donation.amount ?             
+                <h4 className="amount">
+                    {getCurrencySymbol(donation.currencyCode)} {donation.amount.toFixed(2)}
+                </h4> : null
+            }
            </div>
            <div className="message">
              <p>{donation.message}</p>

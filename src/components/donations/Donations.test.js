@@ -2,15 +2,17 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Donations from './Donations'
 import Donation from './donation/Donation';
+import Spinner from '../spinner/Spinner';
 
 const charityStore = {
     loadingDonations: true,
     donations: [1, 2, 3]
 }
 describe('Charity', () => {
-    it('Should show the loading msg', () => {
+    it('Should show the spinner', () => {
         const wrapper = shallow(<Donations.wrappedComponent charityStore={charityStore}/>)
-        expect(wrapper.text()).toBe('Loading..')
+        expect(wrapper.hasClass('donations')).toBe(true)
+        expect(wrapper.childAt(0).type()).toBe(Spinner)
     })
 
     it('Should create the component', () => {

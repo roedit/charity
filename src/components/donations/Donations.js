@@ -1,5 +1,6 @@
 import React from 'react'
 import {observer, inject} from 'mobx-react'
+import Spinner from '../spinner/Spinner'
 import Donation from './donation/Donation'
 
 @inject('charityStore')
@@ -11,8 +12,17 @@ class Donations extends React.Component {
     
         if(charityStore.loadingDonations) {
             return (
-                <div>Loading..</div>
+                <div className="donations">
+                    <Spinner />
+                </div>
             )
+        }
+
+        if(charityStore.donations.length === 0) {
+            <div className="donations">
+                <p>Be the first to donate</p>
+                <button>Donate</button>
+            </div>
         }
 
         return (

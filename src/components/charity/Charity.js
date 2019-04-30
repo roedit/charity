@@ -1,5 +1,6 @@
 import React from 'react'
 import {observer, inject} from 'mobx-react';
+import Spinner from '../spinner/Spinner'
 
 @inject('charityStore')
 @observer
@@ -9,7 +10,9 @@ class Charity extends React.Component {
 
         if(charityStore.loadingCharity) {
             return (
-                <div>Loading..</div>
+                <div className="charity">
+                    <Spinner />
+                </div>
             )
         }
     

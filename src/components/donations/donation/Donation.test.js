@@ -39,7 +39,6 @@ describe('Charity', () => {
         wrapper.setProps({ align })
         expect(wrapper.childAt(1).props().style.order).toBe(align === 'right' ? 1 : 3)
 
-        console.log(wrapper.debug())
         //<div className="header">
         const header = info.childAt(0)
         expect(header.hasClass('header')).toBe(true)
