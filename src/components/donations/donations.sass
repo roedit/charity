@@ -1,5 +1,4 @@
-@import "../styles/colors"
-@import "../styles/bordersAndPaddings"
+$donations-button-background-color: #ffffff
 
 .donations 
     position: relative
@@ -8,3 +7,25 @@
     border-radius: $main-comp-border-radius
     padding: $main-comp-padding
     min-height: 50px;
+
+    .noDonations 
+        color: $main-title-color
+
+    .donate
+        margin: auto
+        background-color: $main-button-color
+        border-color: $main-button-color
+        border-radius: 5px
+        color: $donations-button-background-color
+        padding: 15px 50px
+        text-align: center
+        white-space: nowrap
+        vertical-align: middle
+        font-weight: 800
+
+        &:hover
+            background-color: lighten( $main-button-color, 10% )
+            border-color: lighten( $main-button-color, 10% )
+.donations 
+    &.empty 
+        text-align: center

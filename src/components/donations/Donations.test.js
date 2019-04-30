@@ -27,4 +27,17 @@ describe('Charity', () => {
             expect(wrapper.childAt(index).props().align).toBe(index % 2 ? 'left' : 'right')
         })
     })
+
+    it('Should display donate message', () => {
+        charityStore.donations = []
+        const wrapper = shallow(<Donations.wrappedComponent charityStore={charityStore}/>)
+        expect(wrapper.hasClass('donations')).toBe(true)
+        expect(wrapper.hasClass('empty')).toBe(true)
+
+        expect(wrapper.childAt(0).text()).toBe('Be the first to donate')
+        expect(wrapper.childAt(0).hasClass('noDonations')).toBe(true)
+
+        expect(wrapper.childAt(1).text()).toBe('Donate')
+        expect(wrapper.childAt(1).hasClass('donate')).toBe(true)
+    })
 })

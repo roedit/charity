@@ -19,10 +19,12 @@ class Donations extends React.Component {
         }
 
         if(charityStore.donations.length === 0) {
-            <div className="donations">
-                <p>Be the first to donate</p>
-                <button>Donate</button>
-            </div>
+            return(
+                <div className="donations empty">
+                    <h3 className="noDonations">Be the first to donate</h3>
+                    <button className="donate">Donate</button>
+                </div>
+            )
         }
 
         return (

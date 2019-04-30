@@ -39,7 +39,7 @@ class CharityStore {
         fetch(`${this.api}/${this.key}/v1/charity/${this.charityId}/donations`, this.options)
         .then(response => response.json())
         .then(data => {
-            this.donations = data.donations
+            this.donations = []
             this.loadingDonations = false
         })
     }
