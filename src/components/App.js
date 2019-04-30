@@ -1,5 +1,4 @@
 import React from 'react'
-import './app.sass'
 import Charity from './charity/Charity'
 import Donations from './donations/Donations'
 

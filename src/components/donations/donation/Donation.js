@@ -1,5 +1,4 @@
 import React from 'react'
-import './donation.sass'
 import { getCurrencySymbol } from '../../../utils/currency'
 
 const Donation = (props) => {
